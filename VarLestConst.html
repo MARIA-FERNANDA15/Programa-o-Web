@@ -1,0 +1,94 @@
+<!DOCTYPE html >
+<html  lang =" utf-8 " >
+<cabeça>
+	<meta  charset =" utf-8 " >
+	<title > Tipos Var Let e ​​Const </title >
+</cabeça >
+<corpo >
+<script> _ _
+var  disciplina  =  "Fundamentos de Programação" ;  //global
+
+function  modificaDisciplina ( ) {
+    disciplina  =  "Lógica de Programação" ; 
+}    
+modificaDisciplina ( ) ;  //chama a função
+se ( verdadeiro ) {
+	disciplina  =  "Programação Web!" ;
+}
+var  i  =  0 ; 
+enquanto ( i  <  5 ) {
+   disciplina  =  "Sistemas Operacionais!" ; 
+   eu ++ ; 
+}
+
+{  // bloco
+  disciplina  =  "Gestão de Tempo!" ; 
+}
+console . registro ( disciplina ) ; 
+console . log ( "Escopo de Função do Tipo VAR" ) ;
+
+função  mídia ( n1 , n2 ) {
+	var  med  =  ( n1 + n2 ) / 2 ;  // escopo de função
+	console . log ( med ) ; 
+} 
+mídia ( 7 , 8 ) ;  //chamo a função
+//console.log(med); acesso negado
+var  escola  =  "Lucas Emanuel" ; 
+console . registro ( escola ) ; 
+var  escola  =  "Amélia Figueiredo" ; //redeclaração da variável
+console . registro ( escola ) ;
+
+console . log ( "----- Escopo do tipo LET -----" ) ; 
+let  professor  =  "João Victor" ;  // global
+função  modProd ( ) {
+	professor  =  "Rivânio" ; 
+}
+modProd ( ) ;
+se ( verdadeiro ) {
+	professor  =  "Francisco Dias" ;
+}
+console . registro ( professor ) ; 
+function  quadrado ( valor ) {
+	let  quad  =  valor  *  valor ;
+	console . log ( quad ) ;  //acesso ok!
+}
+quadrado ( 5 ) ; 
+//console.log(quad); //acesso negado
+{ // escopo do bloco
+  let  curso  =  "Administração" ; 
+}
+// console.log(curso);
+se ( verdadeiro ) {
+	let  salario  =  1950 ;
+	console . log ( salario ) ;  //acesso ok
+}
+deixe  numero  =  125 ;
+ numero  =  130 ;
+    console . registro ( número ) ;  
+
+    console.log("---------constante e Escopo-------");
+    // Uma constante não pode ter o valor modificado durante a execução do programa 
+    //Escopo das constante no JV são iguais do tipo let , ou seja, possui escopo de bloco, local (função)e global
+
+    const pi = 3,14
+
+    //pi= 3,15 //erro forçado 
+    { //eccopo de bloco simples
+        const desconto = 5
+    }
+
+    //console.log(desconto); //nao acessa
+
+    function Tolerancia(res){ //escopo local/de função
+        const tol= 10; //global
+        let (tolMin); //90 
+    }
+     Tolerancia(100);
+
+     function TolMax(res,tol){
+     	let TolMax = res + (tol/100) * res;
+     	
+     }
+</script >
+</corpo >
+</html>
